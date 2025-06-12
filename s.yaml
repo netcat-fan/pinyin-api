@@ -10,28 +10,12 @@ services:
         name: serverless-devs-application
       function:
         name: pinyin-api
-        description: Initialize
-        runtime: custom
-        environmentVariables:
-          PATH: >-
-            /opt/nodejs16/bin:/usr/local/bin/apache-maven/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/ruby/bin:/opt/bin:/code:/code/bin
-          NODE_PATH: /opt/nodejs/node_modules
-          LD_LIBRARY_PATH: >-
-            /code:/code/lib:/usr/local/lib:/opt/lib:/opt/php8.1/lib:/opt/php8.0/lib:/opt/php7.2/lib
-        layers:
-          - acs:fc:cn-hangzhou:official:layers/Nodejs16/versions/2
-        memorySize: 128
-        cpu: 0.05
-        timeout: 60
+        runtime: nodejs16
         codeUri: ./
         handler: api/pinyin-api.handler
+        memorySize: 128
+        timeout: 60
         diskSize: 512
-        caPort: 9000
-        customRuntimeConfig:
-          command:
-            - node
-          args:
-            - api/pinyin-api.js
       triggers:
         - name: httpTrigger
           type: http
