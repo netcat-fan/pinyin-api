@@ -24,6 +24,7 @@ services:
         cpu: 0.05
         timeout: 60
         codeUri: ./
+        handler: pinyin-api.phandler
         diskSize: 512
         caPort: 9000
         customRuntimeConfig:
