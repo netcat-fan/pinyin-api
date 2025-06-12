@@ -1,5 +1,6 @@
 const express = require('express');
 const pinyin = require('pinyin');
+const serverless = require('serverless-http');
 const app = express();
 app.use(express.json());
 
@@ -17,7 +18,4 @@ app.all('*', (req, res) => {
   res.status(405).json({ error: 'Method Not Allowed' });
 });
 
-const port = process.env.PORT || 9000;
-app.listen(port, () => {
-  console.log('Listening on', port);
-});
+module.exports.handler = serverless(app);
