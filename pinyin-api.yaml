@@ -9,7 +9,7 @@ services:
       service:
         name: serverless-devs-application
       function:
-        name: pinyin-api-j4eh
+        name: pinyin-api-tlsp
         description: Initialize
         runtime: custom
         environmentVariables:
@@ -31,7 +31,7 @@ services:
             - npm
           args:
             - run
-            - start
+            - pinyin-api
       triggers:
         - name: httpTrigger
           type: http
