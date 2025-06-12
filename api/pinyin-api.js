@@ -1,6 +1,6 @@
 const pinyin = require('pinyin');
 
-module.exports = (req, res) => {
+module.exports.handler = (req, res) => {
   if (req.method !== 'POST') {
     res.status(405).json({ error: 'Method Not Allowed' });
     return;
