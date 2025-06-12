@@ -1,5 +1,0 @@
-handler: api/pinyin-api.handler
-runtime: Node.js16.20
-codeUri: ./
-timeout: 30
-memorySize: 128

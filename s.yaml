@@ -12,7 +12,7 @@ services:
         name: pinyin-api
         runtime: nodejs16
         codeUri: ./
-        handler: api/pinyin-api.handler
+        handler: pinyin-api.handler
         memorySize: 128
         timeout: 60
         diskSize: 512
